@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation QR Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="display-page">
+
+    <h1>Rotation QR</h1>
+    <p>Rotate the QR code and scan it using your phone.</p>
+
+    <div class="qr-container">
+        <img id="qrImage" src="my_qr.png" alt="Rotation QR Code">
+    </div>
+
+    <h2 id="angleText">Current angle: 0°</h2>
+
+    <div class="buttons">
+        <button onclick="rotateQR(0)">0°</button>
+        <button onclick="rotateQR(90)">90°</button>
+        <button onclick="rotateQR(180)">180°</button>
+        <button onclick="rotateQR(270)">270°</button>
+    </div>
+
+    <script>
+        const qrImage = document.getElementById("qrImage");
+        const angleText = document.getElementById("angleText");
+
+        function rotateQR(angle) {
+            qrImage.style.transform = `rotate(${angle}deg)`;
+            angleText.textContent = `Current angle: ${angle}°`;
+        }
+    </script>
+
+</body>
+</html>

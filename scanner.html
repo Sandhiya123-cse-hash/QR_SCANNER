@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation QR Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="scanner-page">
+
+    <h1>Rotation QR Scanner</h1>
+
+    <p>
+        Scan the QR code displayed on your laptop.
+        First keep it upright and calibrate.
+    </p>
+
+    <button id="startButton">Start Camera</button>
+    <button id="calibrateButton" disabled>
+        Set Current Position as A
+    </button>
+
+    <br><br>
+
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas" hidden></canvas>
+
+    <p id="status">Camera not started.</p>
+    <p id="result">Result: --</p>
+    <p id="angle">Detected angle: --</p>
+
+    <!-- QR decoding library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+    <script src="scanner.js"></script>
+
+</body>
+</html>
